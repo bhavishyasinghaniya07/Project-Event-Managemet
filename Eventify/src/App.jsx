@@ -8,7 +8,6 @@ import Footer from "./components/Footer/Footer";
 import Register from "../src/components/Register/Register";
 import List from "./components/List/List";
 import Venue from "./pages/venue/Venue";
-import VenueCard from "./components/VenuePage/VenueCard";
 import VenueData from "./Context/VenueData";
 import Vendor from "./pages/vendor/Vendor";
 import Cart from "./components/Cart/Cart";
@@ -32,14 +31,11 @@ function App() {
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/signin" element={<Register />} />
           <Route path="/list" element={<List />} />
-          <Route path="/venuepage" element={<VenueCard />} />
           <Route path="/register" component={Register} element={<Register />} />
           <Route path="/booking" component={BookingComponent} />
         </Routes>
       </BrowserRouter>
       <Footer />
-      <VendorDashboard />
-      <VenueDashboard />
     </>
   );
 }

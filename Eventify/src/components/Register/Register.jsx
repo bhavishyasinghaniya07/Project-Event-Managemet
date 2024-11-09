@@ -92,7 +92,7 @@ function SignInForm({ userType, setUserType }) {
       <button type="submit" className="sign-in-button">
         Sign In
       </button>
-      <a href="/UserDashboard">Get Demo</a>
+      <a href="">Forgot Password?</a>
     </form>
   );
 }

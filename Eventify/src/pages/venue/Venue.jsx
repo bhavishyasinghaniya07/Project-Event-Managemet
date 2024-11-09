@@ -219,7 +219,7 @@ const VenueSearch = () => {
                     handleBookNow(venue);
                   }}
                 >
-                  Add to Cart
+                  Book Now
                 </button>
               </form>
             </div>
