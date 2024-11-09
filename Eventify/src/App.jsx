@@ -14,6 +14,8 @@ import Vendor from "./pages/vendor/Vendor";
 import Cart from "./components/Cart/Cart";
 import BookingComponent from "./components/Booking/BookingComponent";
 import UserDashboard from "./components/UserDashboard/UserDashboard";
+import VenueDashboard from "./components/VenueDashboard/VenueDashboard";
+import VendorDashboard from "./components/VendorDashboard/VendorDashboard";
 
 function App() {
   return (
@@ -36,6 +38,8 @@ function App() {
         </Routes>
       </BrowserRouter>
       <Footer />
+      <VendorDashboard />
+      <VenueDashboard />
     </>
   );
 }

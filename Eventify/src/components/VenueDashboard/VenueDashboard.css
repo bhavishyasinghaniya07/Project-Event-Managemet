@@ -1,0 +1,221 @@
+/* General Styling */
+body {
+  font-family: 'Arial', sans-serif; /* Set a standard font family */
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333; /* Set default text color to a dark shade */
+}
+
+h2, h3, p, label, button {
+  font-family: 'Arial', sans-serif; /* Ensure consistent font */
+}
+
+/* Navbar Styling */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+}
+
+.navbar-logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+}
+
+.navbar-user {
+  font-size: 16px;
+  color: white;
+}
+
+.venue-owner-dashboard button {
+  padding: 8px 15px;
+  background-color: #ff8c00;
+  border: none;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 4px;
+  width: 400px;
+  margin-left: 5px;
+}
+
+button:hover {
+  background-color: #e67e00;
+}
+
+/* Venue Management Section Styling */
+.manage-bookings-section,
+.manage-venues-section {
+  padding: 20px;
+  background-color: white;
+  margin: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.manage-bookings-section h2,
+.manage-venues-section h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Venue Cards */
+.venue-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.venue-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  padding: 15px;
+}
+
+.venue-info {
+  margin-bottom: 15px;
+}
+
+.venue-info h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.venue-info p {
+  font-size: 14px;
+  margin: 5px 0;
+  color: #555; /* Slightly lighter text for readability */
+}
+
+.venue-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.venue-actions button {
+  width: 50%;
+  padding: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.cancel-booking-btn {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.fin-but{
+  width: 50%;
+}
+
+.delete-venue-btn {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.edit-venue-btn {
+  background-color: #3498db;
+  color: white;
+}
+
+.cancel-booking-btn:hover,
+.delete-venue-btn:hover,
+.edit-venue-btn:hover {
+  opacity: 0.8;
+}
+
+/* Edit Venue Modal */
+.edit-venue-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.edit-venue-form {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.edit-venue-form h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.edit-venue-form label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #333;
+}
+
+.edit-venue-form input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.edit-venue-form button {
+  padding: 10px 20px;
+  margin-top: 10px;
+  cursor: pointer;
+  background-color: #ff8c00;
+  border: none;
+  color: white;
+  font-size: 14px;
+  border-radius: 4px;
+}
+
+.edit-venue-form button:hover {
+  background-color: #e67e00;
+}
+
+.edit-venue-form .cancel-btn {
+  background-color: #ccc;
+  margin-left: 10px;
+}
+
+.edit-venue-form .cancel-btn:hover {
+  background-color: #aaa;
+}
+
+/* Hover Effects */
+.venue-card:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+  transition: all 0.2s ease-in-out;
+}
+
+.edit-venue-btn:hover {
+  background-color: #2980b9;
+}
+
+.delete-venue-btn:hover {
+  background-color: #c0392b;
+}
+
+.cancel-booking-btn:hover {
+  background-color: #c0392b;
+}
