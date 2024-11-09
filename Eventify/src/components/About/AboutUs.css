@@ -1,0 +1,164 @@
+.company-team-section {
+  width: 100%;
+}
+
+/* Company Section */
+.company-section {
+  padding: 40px;
+  background-color: #f9f9f9;
+  color: #2c3e50;
+}
+
+.company-header h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #d35400;
+}
+
+.company-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+
+.company-description p {
+  width: 80%;
+  line-height: 1.8;
+  font-size: 18px;
+  color: #34495e;
+}
+
+.company-image {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.founder-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Team Section */
+.team-section {
+  padding: 40px;
+  background-color: #fff;
+  color: #34495e;
+}
+
+.team-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.team-image {
+  width: 70%;
+}
+
+.team-photo {
+  max-width: 80%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.team-description h2 {
+  margin-left: 20px;
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #d35400;
+}
+
+.team-description p {
+  margin-left: 20px;
+  line-height: 1.6;
+  font-size: 18px;
+  color: #34495e;
+}
+
+/* Join Our Team Section */
+.join-team-section {
+  padding: 40px;
+  background-color: #f4f4f4;
+  color: #2a2a2a;
+}
+
+.join-team-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.join-description h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #d35400;
+}
+
+.join-description p {
+  line-height: 1.8;
+  font-size: 18px;
+  color: #2a2a2a;
+}
+
+.join-image {
+  width: 100%;
+  
+}
+
+.team-photo {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Values Section */
+.values-section {
+  padding: 40px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.values-section h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #d35400;
+}
+
+.values-cards {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.value-card {
+  width: 18%;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.value-card img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border-radius: 50%;
+}
+
+.value-card h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #d35400;
+}
+
+.value-card p {
+  font-size: 16px;
+  color: #34495e;
+}

@@ -1,0 +1,154 @@
+/* BookingComponent.css */
+
+.booking-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  z-index: 1000; /* Ensure it appears on top */
+  width: 90%;
+  max-width: 400px;
+  animation: fadeIn 0.3s ease; /* Animation for fade in effect */
+}
+
+.booking-popup h2 {
+  margin: 0 0 15px;
+  font-size: 24px;
+  color: #333;
+  text-align: center;
+}
+
+.booking-popup form {
+  display: flex;
+  flex-direction: column;
+}
+
+.booking-popup label {
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #555;
+}
+
+.booking-popup input[type="date"],
+.booking-popup input[type="number"] {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  transition: border-color 0.3s;
+}
+
+.booking-popup input[type="date"]:focus,
+.booking-popup input[type="number"]:focus {
+  border-color: #007bff; /* Highlight border on focus */
+  outline: none;
+}
+
+.booking-popup button {
+  background-color: #007bff; /* Primary button color */
+  color: #ffffff;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */
+}
+
+.booking-popup button:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+  transform: translateY(-2px); /* Slight lift effect */
+}
+
+.booking-popup button:focus {
+  outline: none; /* Remove outline on focus */
+}
+
+.booking-popup p {
+  margin: 10px 0;
+  text-align: center;
+  color: #555;
+}
+
+/* Animation for fade in */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* Overlay for background */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Dark semi-transparent background */
+  z-index: 999; /* Just below the popup */
+}
+/* Additional styles for loading indicator */
+.payment-loading {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #007bff; /* Primary color for the loading message */
+  text-align: center;
+}
+.booking-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  z-index: 1000; /* Ensure it appears above other elements */
+}
+
+.booking-popup h2 {
+  margin-bottom: 15px;
+}
+
+.booking-popup label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.booking-popup input {
+  margin-bottom: 15px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%; /* Full width */
+}
+
+.booking-popup button {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #007bff; /* Primary color */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.booking-popup button:disabled {
+  background-color: #cccccc; /* Greyed out when disabled */
+}
+
+.payment-loading {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #007bff; /* Primary color for the loading message */
+  text-align: center;
+}

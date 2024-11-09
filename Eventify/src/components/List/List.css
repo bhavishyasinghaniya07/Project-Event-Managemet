@@ -1,0 +1,123 @@
+/* General Styling */
+.business-form__container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc; /* Light border for contrast */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Soft shadow for depth */
+  background-color: #ffffff; /* Clean white background */
+  font-family: 'Arial', sans-serif; /* Consistent font family */
+  color: #333; /* Default text color for readability */
+}
+
+.business-form__heading {
+  text-align: center;
+  font-size: 32px; /* Larger heading for emphasis */
+  color: #007bff; /* Blue for heading for visibility */
+  margin-bottom: 20px;
+}
+
+.business-form__service-options {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.business-form__radio-group {
+  margin-right: 20px;
+}
+
+.business-form__radio-group input {
+  margin-right: 5px;
+}
+
+.business-form__service-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.business-form__card {
+  background-color: #f9f9f9; /* Soft light gray for cards */
+  border: 1px solid #ddd; /* Light border for separation */
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.business-form__card-heading {
+  font-size: 26px; /* Increased font size for card headings */
+  color: #007bff; /* Blue color for headings */
+  margin-bottom: 15px;
+}
+
+.business-form__input-group {
+  margin-bottom: 15px;
+}
+
+.business-form__input-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-size: 16px; /* Larger font size for labels */
+  color: #444; /* Darker gray for labels */
+}
+
+.business-form__input-group input,
+.business-form__input-group textarea,
+.business-form__input-group select {
+  width: 100%;
+  padding: 12px; /* Increased padding for better touch targets */
+  border: 1px solid #bbb; /* Slightly darker border */
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px; /* Ensure larger font size for inputs */
+  color: #333; /* Dark text for readability */
+  background-color: #ffffff; /* White background for input fields */
+}
+
+.business-form__input-group textarea {
+  resize: vertical;
+  height: 100px; /* Ensured height for textarea for consistency */
+}
+
+.business-form__input-group input[type="file"] {
+  border: none; /* Removes border for file inputs */
+}
+
+.business-form__submit-button {
+  background-color: #007bff; /* Blue background for visibility */
+  color: white;
+  padding: 12px 20px; /* Adjusted padding for consistency */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 18px; /* Larger font size for buttons */
+  transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.business-form__submit-button:hover {
+  background-color: #0056b3; /* Darker blue on hover for clear feedback */
+}
+
+.business-form__terms-text {
+  font-size: 14px; /* Increased font size for terms text */
+  color: #666; /* Gray color for terms text */
+  text-align: center;
+  margin-top: 20px;
+}
+
+.business-form__terms-text a {
+  color: #007bff; /* Blue for links for visibility */
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .business-form__service-options {
+    flex-direction: column;
+  }
+
+  .business-form__radio-group {
+    margin-bottom: 10px;
+  }
+}

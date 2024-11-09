@@ -1,0 +1,147 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f0f2f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.sign-in-register-wrapper {
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.sign-in-container,
+.register-container {
+  width: 350px;
+  padding: 30px;
+  background-color: #fff;
+}
+
+.register-container p {
+  font-size: 16px;
+  text-align: center;
+  color: black; /* Text color set to black */
+}
+
+.register-button {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-align: center;
+}
+
+.register-button:hover {
+  background-color: #0056b3;
+}
+
+.register-button:active {
+  background-color: #004292;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 24px;
+  letter-spacing: 1px;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.sign-in-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.sign-in-button:hover {
+  background-color: #0056b3;
+}
+
+.sign-in-button:active {
+  background-color: #004292;
+}
+
+.toggle-link {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
+  color: black; /* Text color set to black */
+}
+
+.toggle-link span {
+  color: #007bff;
+  cursor: pointer;
+}
+
+.toggle-link span:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .sign-in-register-wrapper {
+    flex-direction: column;
+  }
+
+  .sign-in-container,
+  .register-container {
+    width: 100%;
+  }
+}
