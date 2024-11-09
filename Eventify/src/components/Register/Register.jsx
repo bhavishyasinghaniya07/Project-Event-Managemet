@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./Register.css";
+import { useNavigate } from "react-router-dom";
 
 function App() {
   const [isRegistering, setIsRegistering] = useState(false);
-  const [userType, setUserType] = useState("");
 
   const toggleForm = () => setIsRegistering(!isRegistering);
 
@@ -14,7 +14,7 @@ function App() {
         <>
           <div className="sign-in-container">
             <h2>Sign In</h2>
-            <SignInForm userType={userType} setUserType={setUserType} />
+            <SignInForm />
           </div>
           <div className="register-container">
             <p>Don't have an account?</p>
@@ -33,10 +33,11 @@ function App() {
   );
 }
 
-function SignInForm({ userType, setUserType }) {
+function SignInForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const navigate = useNavigate();
 
   const handleSignIn = async (e) => {
     e.preventDefault();
@@ -45,7 +46,23 @@ function SignInForm({ userType, setUserType }) {
         email,
         password,
       });
-      alert(`Welcome, ${userType || "Regular User"}!`);
+  
+      const { token, user } = response.data; // Destructure token and user from response
+      const { role } = user; // Extract role from user
+  
+      console.log(role);
+  
+      // Store the token if needed (e.g., in localStorage or context)
+      localStorage.setItem("token", token);
+  
+      // Redirect based on role
+      if (role === "Admin") {
+        navigate("/AdminDashboard");
+      } else if (role === "Customer") {
+        navigate("/UserDashboard");
+      } else if (role === "Service Provider") {
+        navigate("/ServiceProviderDashboard");
+      }
     } catch (error) {
       setError("Invalid email or password.");
     }
@@ -53,20 +70,6 @@ function SignInForm({ userType, setUserType }) {
 
   return (
     <form onSubmit={handleSignIn}>
-      <div className="user-type-group">
-        {["Admin", "Vendor", "Regular User"].map((type) => (
-          <label key={type} className="user-type-label">
-            <input
-              type="radio"
-              value={type}
-              checked={userType === type}
-              onChange={(e) => setUserType(e.target.value)}
-            />
-            {type}
-          </label>
-        ))}
-      </div>
-
       <div className="input-group">
         <label>Email:</label>
         <input
@@ -92,7 +95,6 @@ function SignInForm({ userType, setUserType }) {
       <button type="submit" className="sign-in-button">
         Sign In
       </button>
-      <a href="/UserDashboard">Get Demo</a>
     </form>
   );
 }
@@ -102,7 +104,7 @@ function RegisterForm({ toggleForm }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("");
-  const [serviceType, setServiceType] = useState(""); // New state for service provider type
+  const [serviceType, setServiceType] = useState("");
   const [contactInfo, setContactInfo] = useState("");
   const [error, setError] = useState("");
 
@@ -114,7 +116,7 @@ function RegisterForm({ toggleForm }) {
         Email: email,
         Password: password,
         Role: role,
-        ServiceType: role === "Service Provider" ? serviceType : "", // Add service type only if applicable
+        ServiceType: role === "Service Provider" ? serviceType : "",
         ContactInfo: contactInfo,
       });
       alert("Registration successful!");
@@ -165,7 +167,6 @@ function RegisterForm({ toggleForm }) {
         </select>
       </div>
 
-      {/* Conditionally render service type options if Service Provider is selected */}
       {role === "Service Provider" && (
         <div className="input-group">
           <label>Service Type:</label>

@@ -36,8 +36,7 @@ app.use('/api', venueRoutes);
 app.use('/api', serviceRoutes); // Use the services route
 // app.use('/api', cartRoutes); // Use the cart routes under /api/cart
 // app.use('/api', checkoutRoutes);  // Mount checkout routes
-app.use('/api/bookings', venueBookingRoutes);
-app.use('/api/bookings', serviceBookingRoutes);
+
 
 // Protected routes
 app.use('/api', authenticateToken, bookingRoutes);  // Protected with JWT authentication
