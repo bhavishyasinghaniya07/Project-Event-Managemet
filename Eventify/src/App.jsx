@@ -16,7 +16,7 @@ function App() {
   return (
     <>
       <Navbar />
-
+      hii
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<LandingPage />} />
@@ -29,7 +29,6 @@ function App() {
           <Route path="/venuepage" element={<VenueCard />} />
         </Routes>
       </BrowserRouter>
-
       <Footer />
     </>
   );
