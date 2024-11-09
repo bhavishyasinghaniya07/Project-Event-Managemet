@@ -14,6 +14,8 @@ import serviceProviderRoutes from './routes/serviceProviderRoutes.js';
 import businessRoutes from './routes/businessRoutes.js';
 import cartRoutes from './routes/cart.js';
 import checkoutRoutes from './routes/checkout.js';
+import venueBookingRoutes from './routes/venueBooking.js';
+import serviceBookingRoutes from './routes/serviceBooking.js';
 import { authenticateToken } from './middleware/authMiddleware.js';
 
 dotenv.config();
@@ -32,8 +34,10 @@ app.use('/api', authRoutes);
 app.use('/api', userRoutes);
 app.use('/api', venueRoutes);
 app.use('/api', serviceRoutes); // Use the services route
-app.use('/api', cartRoutes); // Use the cart routes under /api/cart
-app.use('/api', checkoutRoutes);  // Mount checkout routes
+// app.use('/api', cartRoutes); // Use the cart routes under /api/cart
+// app.use('/api', checkoutRoutes);  // Mount checkout routes
+app.use('/api/bookings', venueBookingRoutes);
+app.use('/api/bookings', serviceBookingRoutes);
 
 // Protected routes
 app.use('/api', authenticateToken, bookingRoutes);  // Protected with JWT authentication
