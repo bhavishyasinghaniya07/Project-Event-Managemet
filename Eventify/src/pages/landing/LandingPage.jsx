@@ -53,36 +53,48 @@ const LandingPage = () => {
 
       {/* Event Categories Section */}
       <section className="event-categories" id="categories">
-        <h2>Event Categories</h2>
+        <h2>Select Venues According To Event</h2>
         <div className="categories-grid">
           <div className="category-card">
             <img src={wedding} alt="Wedding" />
-            <h3>Wedding</h3>
+            <li>
+              <a href="/venues">Wedding</a>
+            </li>
             <p>Elegant and grand venues for your special day.</p>
           </div>
           <div className="category-card">
             <img src={birthday} alt="Birthday" />
-            <h3>Birthday</h3>
+            <li>
+              <a href="/venues">Birthday</a>
+            </li>
             <p>Celebrate birthdays with joy and fun venues.</p>
           </div>
           <div className="category-card">
             <img src={engagement} alt="Engagement" />
-            <h3>Engagement</h3>
+            <li>
+              <a href="/venues">Engagement</a>
+            </li>
             <p>Beautiful venues to begin your lifelong journey together.</p>
           </div>
           <div className="category-card">
             <img src={pool} alt="Pool Party" />
-            <h3>Pool Party</h3>
+            <li>
+              <a href="/venues">Pool Party</a>
+            </li>
             <p>Cool off with friends at an amazing pool party venue.</p>
           </div>
           <div className="category-card">
             <img src={cocktail} alt="Cocktail Party" />
-            <h3>Cocktail Party</h3>
+            <li>
+              <a href="/venues">Cocktail Party</a>
+            </li>
             <p>Chic venues to raise a toast and have a great evening.</p>
           </div>
           <div className="category-card">
             <img src={corp} alt="Corporate Party" />
-            <h3>Corporate Party</h3>
+            <li>
+              <a href="/venues">Corporate Party</a>
+            </li>
             <p>Formal and stylish venues for your corporate events.</p>
           </div>
         </div>
@@ -161,7 +173,7 @@ const LandingPage = () => {
       {/* Call to Action Section */}
       <section className="cta-section">
         <h2>Ready to Plan Your Event?</h2>
-        <a href="#contact" className="btn-primary1">
+        <a href="/venues" className="btn-primary1">
           Get Started Now
         </a>
       </section>

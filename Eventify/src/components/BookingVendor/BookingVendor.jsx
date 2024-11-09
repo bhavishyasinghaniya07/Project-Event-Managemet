@@ -1,30 +1,73 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom"; // For navigation
 import "./BookingVendor.css"; // Add your styling as needed
 
 const BookingVendor = ({ vendor, onClose }) => {
   const [guests, setGuests] = useState(1);
   const [date, setDate] = useState("");
-  const [eventType, setEventType] = useState(""); // State for event type
+  const [eventType, setEventType] = useState(""); // Event type state
   const [vendorAdded, setVendorAdded] = useState(false); // State for confirmation
+  const [paymentProcessing, setPaymentProcessing] = useState(false); // State for dummy payment
+  const [bookingConfirmed, setBookingConfirmed] = useState(false); // State for booking confirmation
 
-  // Setting minimum date to tomorrow's date
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // Simulating user login state
+  const navigate = useNavigate(); // React Router hook for redirection
+
+  // Function to validate date input (must be at least tomorrow's date)
   const today = new Date();
   const minDate = new Date(today.setDate(today.getDate() + 1))
     .toISOString()
     .split("T")[0];
 
   const handleAddToCart = (e) => {
-    e.preventDefault();
-    setVendorAdded(true); // Set vendor added to true on form submission
+    e.preventDefault(); // Prevent default form submission
+
+    // Check if user is logged in
+    if (isLoggedIn) {
+      setPaymentProcessing(true); // Simulate payment gateway processing
+      setTimeout(() => {
+        setPaymentProcessing(false); // Stop payment processing
+        setBookingConfirmed(true); // Show booking confirmation
+      }, 2000); // Simulate payment processing time (2 seconds)
+    } else {
+      // Redirect to Register Page if not logged in
+      navigate("/register");
+    }
+
+    setVendorAdded(true); // Confirm vendor added to cart
   };
 
-  if (vendorAdded) {
+  if (vendorAdded && !paymentProcessing && !bookingConfirmed) {
     return (
       <div className="booking-popup">
         <h2>Vendor Added to Cart</h2>
         <p>
           {vendor.name} for {eventType} on {date} for {guests} guests has been
           added to your cart!
+        </p>
+        <button onClick={onClose}>Close</button>
+        <button onClick={handleAddToCart}>Proceed to Payment</button>
+      </div>
+    );
+  }
+
+  if (paymentProcessing) {
+    return (
+      <div className="booking-popup">
+        <h2>Processing Payment</h2>
+        <p>Please wait while we process your payment...</p>
+        <div className="payment-loading">Processing...</div>
+      </div>
+    );
+  }
+
+  if (bookingConfirmed) {
+    return (
+      <div className="booking-popup">
+        <h2>Booking Confirmation</h2>
+        <p>
+          Your booking for {vendor.name} on {date} for {guests} guests has been
+          successfully confirmed!
         </p>
         <button onClick={onClose}>Close</button>
       </div>
@@ -40,11 +83,12 @@ const BookingVendor = ({ vendor, onClose }) => {
           <input
             type="date"
             value={date}
-            min={minDate} // Prevents selection of past or same-day dates
+            min={minDate} // Set minimum date to tomorrow
             onChange={(e) => setDate(e.target.value)}
             required
           />
         </div>
+
         <div>
           <label>Event Type:</label>
           <select
@@ -63,6 +107,10 @@ const BookingVendor = ({ vendor, onClose }) => {
           </select>
         </div>
         <div>
+          <label>Address:</label>
+          <input type="input" required />
+        </div>
+        <div>
           <label>Number of Guests:</label>
           <input
             type="number"
@@ -73,7 +121,7 @@ const BookingVendor = ({ vendor, onClose }) => {
           />
         </div>
         <div>
-          <p>Total Price: ₹{vendor.priceRange * guests}</p>
+          <p>Total Price: ₹{vendor.pricePerPlate * guests}</p>
         </div>
         <button type="submit">Pay Now</button>
       </form>
