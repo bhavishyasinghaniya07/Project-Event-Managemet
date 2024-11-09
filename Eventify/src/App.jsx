@@ -11,15 +11,19 @@ import Venue from "./pages/venue/Venue";
 import VenueCard from "./components/VenuePage/VenueCard";
 import VenueData from "./Context/VenueData";
 import Vendor from "./pages/vendor/Vendor";
+import Cart from "./components/Cart/Cart";
+import BookingComponent from "./components/Booking/BookingComponent";
+import UserDashboard from "./components/UserDashboard/UserDashboard";
 
 function App() {
   return (
     <>
       <Navbar />
-      hii
+
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<LandingPage />} />
+          <Route path="/UserDashboard" element={<UserDashboard />} />
           <Route path="/venues" element={<Venue />} />
           <Route path="/vendor" element={<Vendor />} />
           <Route path="/about" element={<AboutUs />} />
@@ -27,6 +31,8 @@ function App() {
           <Route path="/signin" element={<Register />} />
           <Route path="/list" element={<List />} />
           <Route path="/venuepage" element={<VenueCard />} />
+          <Route path="/register" component={Register} element={<Register />} />
+          <Route path="/booking" component={BookingComponent} />
         </Routes>
       </BrowserRouter>
       <Footer />

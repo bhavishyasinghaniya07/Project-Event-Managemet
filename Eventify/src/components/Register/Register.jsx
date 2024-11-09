@@ -92,6 +92,7 @@ function SignInForm({ userType, setUserType }) {
       <button type="submit" className="sign-in-button">
         Sign In
       </button>
+      <a href="/UserDashboard">Get Demo</a>
     </form>
   );
 }
@@ -157,14 +158,9 @@ function RegisterForm({ toggleForm }) {
 
       <div className="input-group">
         <label>Role:</label>
-        <select
-          value={role}
-          onChange={(e) => setRole(e.target.value)}
-          required
-        >
+        <select value={role} onChange={(e) => setRole(e.target.value)} required>
           <option value="">Select Role</option>
           <option value="Customer">Customer</option>
-          <option value="Admin">Admin</option>
           <option value="Service Provider">Service Provider</option>
         </select>
       </div>
