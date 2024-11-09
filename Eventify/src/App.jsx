@@ -11,12 +11,12 @@ import Venue from "./pages/venue/Venue";
 import VenueCard from "./components/VenuePage/VenueCard";
 import VenueData from "./Context/VenueData";
 import Vendor from "./pages/vendor/Vendor";
+import Cart from "./components/Cart/Cart";
 
 function App() {
   return (
     <>
       <Navbar />
-      hii
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<LandingPage />} />

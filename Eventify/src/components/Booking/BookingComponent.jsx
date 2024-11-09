@@ -4,27 +4,27 @@ import "./BookingComponent.css"; // Add styling as needed
 const BookingComponent = ({ venue, onClose }) => {
   const [guests, setGuests] = useState(1);
   const [date, setDate] = useState("");
-  const [paymentSuccess, setPaymentSuccess] = useState(false);
-  const [processingPayment, setProcessingPayment] = useState(false); // State to manage payment processing
+  const [eventType, setEventType] = useState(""); // Event type state
+  const [venueAdded, setVenueAdded] = useState(false); // State for confirmation
 
-  const handlePayment = (e) => {
-    e.preventDefault(); // Prevent the default form submission
-    setProcessingPayment(true); // Start processing payment
+  // Function to validate date input (must be at least tomorrow's date)
+  const today = new Date();
+  const minDate = new Date(today.setDate(today.getDate() + 1))
+    .toISOString()
+    .split("T")[0];
 
-    // Simulate a payment processing delay
-    setTimeout(() => {
-      setProcessingPayment(false); // Stop processing payment
-      setPaymentSuccess(true); // Mark payment as successful
-    }, 2000);
+  const handleAddToCart = (e) => {
+    e.preventDefault(); // Prevent default form submission
+    setVenueAdded(true); // Confirm venue added to cart
   };
 
-  if (paymentSuccess) {
+  if (venueAdded) {
     return (
       <div className="booking-popup">
-        <h2>Booking Confirmation</h2>
+        <h2>Venue Added to Cart</h2>
         <p>
-          Your booking for {venue.name} on {date} for {guests} guests has been
-          confirmed!
+          {venue.name} for {eventType} on {date} for {guests} guests has been
+          added to your cart!
         </p>
         <button onClick={onClose}>Close</button>
       </div>
@@ -34,15 +34,33 @@ const BookingComponent = ({ venue, onClose }) => {
   return (
     <div className="booking-popup">
       <h2>Book {venue.name}</h2>
-      <form onSubmit={handlePayment}>
+      <form onSubmit={handleAddToCart}>
         <div>
           <label>Date:</label>
           <input
             type="date"
             value={date}
+            min={minDate} // Set minimum date to tomorrow
             onChange={(e) => setDate(e.target.value)}
             required
           />
+        </div>
+        <div>
+          <label>Event Type:</label>
+          <select
+            value={eventType}
+            onChange={(e) => setEventType(e.target.value)}
+            required
+          >
+            <option value="" disabled>
+              Select an event type
+            </option>
+            <option value="Wedding">Wedding</option>
+            <option value="Birthday">Birthday</option>
+            <option value="Pool Party">Pool Party</option>
+            <option value="Corporate Event">Corporate Event</option>
+            <option value="Anniversary">Anniversary</option>
+          </select>
         </div>
         <div>
           <label>Number of Guests:</label>
@@ -55,20 +73,11 @@ const BookingComponent = ({ venue, onClose }) => {
           />
         </div>
         <div>
-          <p>Total Price: ₹{venue.vegPrice * guests}</p>
+          <p>Total Price: ₹{venue.pricePerPlate * guests}</p>
         </div>
-        <button type="submit" disabled={processingPayment}>
-          {processingPayment ? "Processing Payment..." : "Pay Now"}
-        </button>
+        <button type="submit">Pay Now</button>
       </form>
       <button onClick={onClose}>Cancel</button>
-
-      {/* Dummy payment loading indicator */}
-      {processingPayment && (
-        <div className="payment-loading">
-          <p>Processing your payment...</p>
-        </div>
-      )}
     </div>
   );
 };
