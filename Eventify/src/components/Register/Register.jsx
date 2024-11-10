@@ -27,7 +27,7 @@ function App() {
         </>
       ) : (
         <div className="register-container">
-          <h2>Register</h2>
+          <h2>Register Yourself</h2>
           <RegisterForm toggleForm={toggleForm} />
         </div>
       )}
@@ -107,6 +107,7 @@ function SignInForm() {
       <button type="submit" className="sign-in-button">
         Sign In
       </button>
+      <a href="">Forgot Password?</a>
     </form>
   );
 }

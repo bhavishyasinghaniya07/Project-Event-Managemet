@@ -9,7 +9,8 @@ import Footer from "./components/Footer/Footer";
 import Register from "./components/Register/Register";
 import List from "./components/List/List";
 import Venue from "./pages/venue/Venue";
-import VenueCard from "./components/VenuePage/VenueCard";
+
+import VenueData from "./Context/VenueData";
 import Vendor from "./pages/vendor/Vendor";
 import Cart from "./components/Cart/Cart";
 import BookingComponent from "./components/Booking/BookingComponent";
@@ -39,6 +40,7 @@ function App() {
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/UserDashboard" element={<UserDashboard />} />
+          <Route path="/AdminDashboard" element={<AdminDashboard />} />
           <Route path="/venues" element={<Venue />} />
           <Route path="/vendor" element={<Vendor />} />
           <Route path="/about" element={<AboutUs />} />
@@ -53,6 +55,7 @@ function App() {
         </Routes>
         <Footer />
       </BrowserRouter>
+
     </UserContext.Provider>
   );
 }

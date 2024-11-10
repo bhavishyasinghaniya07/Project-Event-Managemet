@@ -88,9 +88,10 @@ const BookingComponent = ({ venue, onClose }) => {
             required
           />
         </div>
-        <div>
+        <div className="event-t">
           <label>Event Type:</label>
           <select
+            type="text"
             value={eventType}
             onChange={(e) => setEventType(e.target.value)}
             required
@@ -111,7 +112,7 @@ const BookingComponent = ({ venue, onClose }) => {
             type="number"
             value={guests}
             onChange={(e) => setGuests(e.target.value)}
-            min="1"
+            min="20"
             required
           />
         </div>

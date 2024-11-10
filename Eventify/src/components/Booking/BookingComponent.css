@@ -34,12 +34,14 @@
 }
 
 .booking-popup input[type="date"],
+.booking-popup input[type="text"],
 .booking-popup input[type="number"] {
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 4px;
   transition: border-color 0.3s;
 }
+
 
 .booking-popup input[type="date"]:focus,
 .booking-popup input[type="number"]:focus {

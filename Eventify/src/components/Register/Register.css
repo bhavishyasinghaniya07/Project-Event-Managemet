@@ -39,6 +39,13 @@ body {
   color: black; /* Text color set to black */
 }
 
+a{
+  text-decoration: none;
+  color: rgb(120, 120, 227);
+  font-size: 15px;
+
+}
+
 .register-button {
   display: block;
   width: 100%;
