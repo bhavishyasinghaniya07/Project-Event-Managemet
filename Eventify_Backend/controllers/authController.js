@@ -5,6 +5,7 @@ import jwt from 'jsonwebtoken';
 import { findUserByEmail } from '../models/User.js';
 dotenv.config();
 
+
 export const loginUser = async (req, res) => {
     try {
         const { email, password } = req.body;
@@ -26,6 +27,16 @@ export const loginUser = async (req, res) => {
             return res.status(401).json({ error: 'Invalid email or password.' });
         }
 
+        // Check if the user is a Service Provider to retrieve ServiceType
+        let serviceType = null;
+        if (user.Role === 'Service Provider') {
+            const [serviceProvider] = await pool.query(
+                'SELECT Type FROM ServiceProvider WHERE ProviderID = ?',
+                [user.UserID]
+            );
+            serviceType = serviceProvider.length > 0 ? serviceProvider[0].Type : null;
+        }
+
         // Generate JWT token
         const token = jwt.sign(
             { userId: user.UserID, role: user.Role },
@@ -33,10 +44,18 @@ export const loginUser = async (req, res) => {
             { expiresIn: '1h' }
         );
 
+        // Construct the response with ServiceType if applicable
+        const userData = {
+            id: user.UserID,
+            name: user.Name,
+            role: user.Role,
+            ...(serviceType && { serviceType })
+        };
+
         res.status(200).json({
             message: 'Login successful.',
             token,
-            user: { id: user.UserID, name: user.Name, role: user.Role }
+            user: userData
         });
     } catch (error) {
         console.error('Login error:', error.message);
