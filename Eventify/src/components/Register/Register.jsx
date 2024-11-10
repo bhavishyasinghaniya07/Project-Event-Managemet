@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import axios from "axios";
-import "./Register.css";
 import { useNavigate } from "react-router-dom";
+import { UserContext } from "../../Context/UserContext"; // Import the UserContext
+import "./Register.css";
 
+// App component to switch between SignIn and Register forms
 function App() {
   const [isRegistering, setIsRegistering] = useState(false);
 
@@ -33,7 +35,9 @@ function App() {
   );
 }
 
+// SignInForm component that handles user sign-in
 function SignInForm() {
+  const { setIsLoggedIn, setRole } = useContext(UserContext); // Use context to set login state globally
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -46,16 +50,19 @@ function SignInForm() {
         email,
         password,
       });
-  
+
       const { token, user } = response.data; // Destructure token and user from response
       const { role } = user; // Extract role from user
-  
-      console.log(role);
-  
-      // Store the token if needed (e.g., in localStorage or context)
+
+      // Store token and role in localStorage
       localStorage.setItem("token", token);
-  
-      // Redirect based on role
+      localStorage.setItem("role", role);
+
+      // Update global context state
+      setIsLoggedIn(true);
+      setRole(role);
+
+      // Redirect based on user role
       if (role === "Admin") {
         navigate("/AdminDashboard");
       } else if (role === "Customer") {
@@ -99,6 +106,7 @@ function SignInForm() {
   );
 }
 
+// RegisterForm component that handles user registration
 function RegisterForm({ toggleForm }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
