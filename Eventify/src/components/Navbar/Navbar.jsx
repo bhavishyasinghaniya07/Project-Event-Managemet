@@ -65,9 +65,8 @@ const Navbar = () => {
             </>
           ) : (
             <>
-              {/* Show Signin and List Business buttons when not logged in */}
+              {/* Show only Signin button when not logged in */}
               <li className="action-btn action-btn1"><a href="/signin">Signin</a></li>
-              <li className="action-btn action-btn2"><a href="/list">List Business</a></li>
             </>
           )}
         </ul>

@@ -58,6 +58,7 @@ function SignInForm() {
       localStorage.setItem("token", token);
       localStorage.setItem("role", role);
       localStorage.setItem("serviceType", serviceType); // Store serviceType
+      localStorage.setItem("userId", user.id);
 
       // Update global context state
       setIsLoggedIn(true);

@@ -18,6 +18,7 @@ import UserDashboard from "./components/UserDashboard/UserDashboard";
 import VenueDashboard from "./components/VenueDashboard/VenueDashboard";
 import VendorDashboard from "./components/VendorDashboard/VendorDashboard";
 import { UserContext } from "./Context/UserContext"; // Import UserContext
+import AdminDashboard from "./components/AdminDashboard/AdminDashboard"
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -47,7 +48,6 @@ function App() {
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/signin" element={<Register />} />
           <Route path="/list" element={<List />} />
-          <Route path="/venuepage" element={<VenueCard />} />
           <Route path="/register" element={<Register />} />
           <Route path="/booking" element={<BookingComponent />} />
           <Route path="/VendorDashboard" element={<VendorDashboard />} />

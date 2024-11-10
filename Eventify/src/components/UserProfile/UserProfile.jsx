@@ -1,17 +1,48 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import "./UserProfile.css";
 
-const UserProfile = ({
-  user = {
-    name: "Manish Kumar Sharma",
-    role: "Regular User",
-    contactNumber: "78784368648",
-    email: "manish@gmail.com",
-    address: "MP nagar Bhopal",
-  },
-}) => {
+const UserProfile = () => {
   const [isEditing, setIsEditing] = useState(false);
-  const [updatedUser, setUpdatedUser] = useState(user);
+  const [updatedUser, setUpdatedUser] = useState({
+    name: "",
+    role: "Regular User",
+    contactNumber: "N/A",
+    email: "N/A",
+    address: "MP Nagar Bhopal", // Default address
+  });
+
+  const fetchUserProfile = async () => {
+    const userId = localStorage.getItem("userId");
+    const token = localStorage.getItem("token");
+  
+    try {
+      const response = await axios.get(
+        `http://localhost:5000/api/user/profile?userId=${userId}`,
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
+  
+      // Log the response to check data structure
+      console.log("Profile API response:", response.data);
+  
+      // Update the state with the data from the API, matching the correct keys
+      setUpdatedUser({
+        name: response.data.Name || "User", // Correct key for Name
+        role: response.data.Role || "Regular User", // Correct key for Role
+        contactNumber: response.data.ContactInfo || "N/A", // Correct key for ContactInfo
+        email: response.data.Email || "N/A", // Correct key for Email
+        address: response.data.address || "MP Nagar Bhopal", // Default if missing
+      });
+    } catch (error) {
+      console.error("Error fetching profile:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchUserProfile();
+  }, []);
 
   const handleEditClick = () => {
     setIsEditing(true);
@@ -25,10 +56,36 @@ const UserProfile = ({
     });
   };
 
-  const handleSave = () => {
-    setIsEditing(false);
+  const handleSave = async () => {
+    const userId = localStorage.getItem("userId");
+    const token = localStorage.getItem("token");
+  
+    try {
+      const response = await axios.put(
+        `http://localhost:5000/api/user/profile`, // PUT request to update the profile
+        {
+          // Request body structure should match the one from Postman
+          userId: userId,  // If the backend requires userId to be passed
+          name: updatedUser.name,
+          email: updatedUser.email,
+          contactInfo: updatedUser.contactNumber, // Ensure this matches the backend field name
+        },
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
+  
+      console.log("Profile updated:", response.data);
+  
+      // After saving, exit edit mode
+      setIsEditing(false);
+  
+      // Optionally, you can update the UI or show a success message
+    } catch (error) {
+      console.error("Error updating profile:", error);
+    }
   };
-
+  
   return (
     <div className="profile-card">
       {!isEditing ? (
