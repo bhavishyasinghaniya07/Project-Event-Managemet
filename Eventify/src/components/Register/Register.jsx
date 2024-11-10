@@ -25,7 +25,7 @@ function App() {
         </>
       ) : (
         <div className="register-container">
-          <h2>Register</h2>
+          <h2>Register Yourself</h2>
           <RegisterForm toggleForm={toggleForm} />
         </div>
       )}
