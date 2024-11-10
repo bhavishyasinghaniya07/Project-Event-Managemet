@@ -9,7 +9,7 @@
   background-color: #ffffff; /* Clean white background */
   font-family: 'Arial', sans-serif; /* Consistent font family */
   color: #333; /* Default text color for readability */
-  height: 85vh;
+  height: 84vh;
   overflow: scroll;
 }
 
