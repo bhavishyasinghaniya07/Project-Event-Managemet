@@ -52,23 +52,28 @@ function SignInForm() {
       });
 
       const { token, user } = response.data; // Destructure token and user from response
-      const { role } = user; // Extract role from user
+      const { role, serviceType } = user; // Extract role and serviceType from user
 
-      // Store token and role in localStorage
+      // Store token, role, and serviceType in localStorage
       localStorage.setItem("token", token);
       localStorage.setItem("role", role);
+      localStorage.setItem("serviceType", serviceType); // Store serviceType
 
       // Update global context state
       setIsLoggedIn(true);
       setRole(role);
 
-      // Redirect based on user role
+      // Redirect based on role and serviceType for Service Provider
       if (role === "Admin") {
         navigate("/AdminDashboard");
       } else if (role === "Customer") {
         navigate("/UserDashboard");
       } else if (role === "Service Provider") {
-        navigate("/ServiceProviderDashboard");
+        if (serviceType === "Venue Owner") {
+          navigate("/VenueDashboard"); // Navigate to Venue Dashboard for Venue Owner
+        } else if (serviceType === "Vendor") {
+          navigate("/VendorDashboard"); // Navigate to Vendor Dashboard for Vendor
+        }
       }
     } catch (error) {
       setError("Invalid email or password.");
@@ -105,6 +110,7 @@ function SignInForm() {
     </form>
   );
 }
+
 
 // RegisterForm component that handles user registration
 function RegisterForm({ toggleForm }) {
