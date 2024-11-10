@@ -1,0 +1,296 @@
+/* General styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #d4cdcd; /* Netflix-like dark theme */
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  /* padding-top: 100px; */
+  padding: 20px;
+  height: 100vh;
+  width: 100vw;
+  overflow: scroll;
+  
+
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(14, 46, 78, 0.9);
+  padding: 10px 20px;
+  margin-bottom: 20px;
+}
+
+.navbar h1 {
+  margin: 0;
+  color: #bcccf3; /* Netflix red */
+}
+
+.navbar button {
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.navbar button:hover {
+  background-color: #e50914;
+  color: black;
+}
+
+/* Dashboard Overview Cards */
+.dashboard-cards {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  cursor: pointer;
+}
+
+.card {
+  background-color: rgba(14, 46, 78, 0.9);
+  width: 30%;
+  margin: 10px 0;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  color: white;
+}
+
+.card h2 {
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.card p {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* User Detail Cards */
+.detail-card {
+  background-color: rgba(14, 46, 78, 0.9);
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 500px;
+  margin: 20px auto;
+  text-align: center;
+  color: white;
+}
+
+.back-button{
+  width: 20%;
+  cursor: pointer;
+}
+.detail-card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+.detail-card h3 {
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+.detail-card p {
+  margin: 5px 0;
+}
+
+.detail-card button {
+  background-color: #e50914;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+  width: 50%;
+  border-radius: 5%;
+}
+
+.detail-card button:hover {
+  background-color: #b20710;
+}
+
+/* Modal for Editing User Details */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 800px;
+  overflow-y: auto;
+  max-height: 90%;
+  position: relative;
+}
+
+.modal-content h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.modal-content label {
+  font-size: 16px;
+  display: block;
+  margin-bottom: 8px;
+  margin-top: 15px;
+}
+
+.modal-content input {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #222;
+  color: white;
+}
+
+.modal-content input[type="email"],
+.modal-content input[type="tel"],
+.modal-content input[type="date"],
+.modal-content input[type="text"] {
+  font-size: 14px;
+}
+
+.modal-content button {
+  background-color: #e50914;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  margin: 10px 0;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+  width: 48%;
+  display: inline-block;
+  margin-right: 4%;
+}
+
+.modal-content button:hover {
+  background-color: #b20710;
+}
+
+.modal-content button:last-child {
+  margin-right: 0;
+}
+
+/* Block / Unblock button */
+.block-unblock-btn {
+  background-color: #2a9d8f;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  color: white;
+  border-radius: 4px;
+  width: 48%;
+  margin-right: 4%;
+}
+
+.block-unblock-btn:hover {
+  background-color: #1b8b72;
+}
+
+.delete-btn {
+  background-color: #e63946;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  color: white;
+  border-radius: 4px;
+  width: 48%;
+}
+
+.delete-btn:hover {
+  background-color: #d12c2f;
+}
+
+/* Scrollable Form */
+.modal-content form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.modal-content form label,
+.modal-content form input {
+  width: 48%;
+  margin-bottom: 15px;
+}
+
+.modal-content form input {
+  font-size: 14px;
+}
+
+.modal-content .form-actions {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.modal-content .form-actions button {
+  width: 48%;
+}
+
+.modal-content .form-actions button:last-child {
+  margin-right: 0;
+}
+
+/* Responsive Layout for Mobile */
+@media screen and (max-width: 768px) {
+  .dashboard-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 80%;
+  }
+
+  .detail-card {
+    width: 90%;
+  }
+
+  .modal-content {
+    padding: 20px;
+    width: 95%;
+    max-height: 90%;
+  }
+
+  .modal-content form input,
+  .modal-content form label {
+    width: 100%;
+  }
+
+  .modal-content button {
+    width: 100%;
+    margin: 5px 0;
+  }
+}

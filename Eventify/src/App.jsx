@@ -15,6 +15,7 @@ import BookingComponent from "./components/Booking/BookingComponent";
 import UserDashboard from "./components/UserDashboard/UserDashboard";
 import VenueDashboard from "./components/VenueDashboard/VenueDashboard";
 import VendorDashboard from "./components/VendorDashboard/VendorDashboard";
+import AdminDashboard from "./components/AdminDashboard/AdminDashboard";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/UserDashboard" element={<UserDashboard />} />
+          <Route path="/AdminDashboard" element={<AdminDashboard />} />
           <Route path="/venues" element={<Venue />} />
           <Route path="/vendor" element={<Vendor />} />
           <Route path="/about" element={<AboutUs />} />
@@ -35,6 +37,7 @@ function App() {
           <Route path="/booking" component={BookingComponent} />
         </Routes>
       </BrowserRouter>
+      <AdminDashboard />
       <Footer />
     </>
   );
