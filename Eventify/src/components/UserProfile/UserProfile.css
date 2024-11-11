@@ -1,0 +1,64 @@
+.profile-card {
+  width: 850px;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 20px auto;
+}
+
+.profile-info {
+  margin-bottom: 20px;
+}
+
+.user-name {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.user-role {
+  font-size: 1.1rem;
+  color: #888;
+  margin: 8px 0;
+}
+
+.user-contact,
+.user-email,
+.user-address {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 12px;
+}
+
+/* Button Styling */
+.edit-button,
+.save-button {
+  width: 30%;
+  padding: 10px;
+  background-color: #0066cc;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.edit-button:hover,
+.save-button:hover {
+  background-color: #005bb5;
+}
+
+/* Form Fields */
+.edit-form .input-field {
+  width: 80%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+}

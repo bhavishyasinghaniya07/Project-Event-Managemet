@@ -44,6 +44,7 @@
 }
 
 .booking-popup input[type="date"],
+.booking-popup input[type="text"],
 .booking-popup input[type="number"] {
   padding: 10px;
   border: 1px solid #ddd;
