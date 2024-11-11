@@ -1,3 +1,3 @@
 # Project Event Managemet
-An Group Project --Event Management System
+A Group Project --Event Management System Mentored By Prof. J.K Jain Sir
 
