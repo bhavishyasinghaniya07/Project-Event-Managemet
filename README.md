@@ -1,4 +1,8 @@
 # Project Event Managemet
+
+ An Personal Event Management Projecct in MERN
+ #please add this comment 2
+
 Event Management Website
 Overview
 This project is a dynamic and responsive website designed to help users plan, manage, and book events seamlessly. With features like vendor search, venue booking, and budget management, it simplifies the event management process.
@@ -16,4 +20,5 @@ Database: MongoDB, MySQL, or any other database used
 JavaScript: For interactivity and feature implementation
 
 A Group Project --Event Management System Mentored By Prof. J.K Jain Sir
+
 
