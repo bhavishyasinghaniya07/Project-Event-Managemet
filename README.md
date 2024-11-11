@@ -1,2 +1,3 @@
 # Project Event Managemet
- An Personal Event Management Projecct in MERN
+An Group Project --Event Management System
+
