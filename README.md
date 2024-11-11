@@ -1,2 +1,3 @@
 # Project Event Managemet
- An Personal Event Management Projecct in MERN
+A Group Project --Event Management System Mentored By Prof. J.K Jain Sir
+
