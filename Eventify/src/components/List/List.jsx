@@ -59,11 +59,19 @@ const BusinessForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+  
+    const token = localStorage.getItem("token");  // Get the token from localStorage
+  
+    if (!token) {
+      alert("You are not authenticated. Please log in.");
+      return;
+    }
+  
     const url =
       selectedService === "venue"
         ? "http://localhost:5000/api/venues"
         : "http://localhost:5000/api/services";
-
+  
     try {
       const data = new FormData();
       Object.entries(formData).forEach(([key, value]) => {
@@ -73,11 +81,14 @@ const BusinessForm = () => {
           data.append(key, value);
         }
       });
-
+  
       const response = await axios.post(url, data, {
-        headers: { "Content-Type": "multipart/form-data" },
+        headers: {
+          "Content-Type": "multipart/form-data",
+          Authorization: `Bearer ${token}`,  // Add Authorization header with JWT token
+        },
       });
-
+  
       if (response.status === 201) {
         alert("Form submitted successfully!");
       }
@@ -86,6 +97,8 @@ const BusinessForm = () => {
       alert("Failed to submit the form. Please try again.");
     }
   };
+  
+
 
   const services = [
     "Catering", "Photography", "Videography", "Music Band", "Decoration", "Event Planning",
