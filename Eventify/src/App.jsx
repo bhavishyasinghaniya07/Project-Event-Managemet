@@ -20,8 +20,6 @@ import VendorDashboard from "./components/VendorDashboard/VendorDashboard";
 import { UserContext } from "./Context/UserContext"; // Import UserContext
 import AdminDashboard from "./components/AdminDashboard/AdminDashboard";
 
-// testing
-
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [role, setRole] = useState("");
