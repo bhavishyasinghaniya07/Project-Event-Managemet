@@ -3,7 +3,7 @@ import "./Vendor.css";
 import VendorData from "../../Context/VendorData";
 import BookingVendor from "../../components/BookingVendor/BookingVendor";
 
-const VendorSearch = () => {
+const VendorSearch = ({ userLoggedIn }) => {
   // State for managing search input and filter selections
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedPrice, setSelectedPrice] = useState("");
@@ -14,8 +14,12 @@ const VendorSearch = () => {
   const [showBooking, setShowBooking] = useState(false); // State to control booking visibility
 
   const handleBookNow = (vendor) => {
-    setSelectedVendor(vendor);
-    setShowBooking(true); // Show the booking component
+    if (userLoggedIn) {
+      setSelectedVendor(vendor);
+      setShowBooking(true); // Show the booking component
+    } else {
+      alert("Please log in to book this vendor.");
+    }
   };
 
   const handleCloseBooking = () => {
@@ -192,6 +196,7 @@ const VendorSearch = () => {
                     e.preventDefault(); // Prevent the default form submission
                     handleBookNow(vendor);
                   }}
+                  disabled={!userLoggedIn} // Button disabled if user is not logged in
                 >
                   Book Now
                 </button>

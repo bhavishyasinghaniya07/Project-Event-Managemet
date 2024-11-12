@@ -1,28 +1,38 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate for navigation
 import "./Venue.css";
 import VenueData from "../../Context/VenueData";
 import BookingComponent from "../../components/Booking/BookingComponent";
 
 const VenueSearch = () => {
-  // State for managing search input and filter selections
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedType, setSelectedType] = useState("");
   const [selectedBudget, setSelectedBudget] = useState("");
   const [selectedRegion, setSelectedRegion] = useState("");
   const [selectedOccasion, setSelectedOccasion] = useState("");
-  const [selectedVenue, setSelectedVenue] = useState(null); // State to manage selected venue
-  const [showBooking, setShowBooking] = useState(false); // State to control booking visibility
+  const [selectedVenue, setSelectedVenue] = useState(null);
+  const [showBooking, setShowBooking] = useState(false);
+  
+  const navigate = useNavigate(); // Initialize navigate
 
   const handleBookNow = (venue) => {
+    const token = localStorage.getItem("token");
+
+    if (!token) {
+      alert("Please log in to book a venue.");
+      navigate("/login"); // Redirect to login page if not logged in
+      return;
+    }
+
     setSelectedVenue(venue);
-    setShowBooking(true); // Show the booking component
+    setShowBooking(true);
   };
 
   const handleCloseBooking = () => {
     setShowBooking(false);
-    setSelectedVenue(null); // Reset selected venue
+    setSelectedVenue(null);
   };
-  // Dummy data for filters
+
   const filterOptions = {
     type: ["Pure Veg", "Veg & NonVeg Both"],
     budget: [
@@ -41,30 +51,17 @@ const VenueSearch = () => {
     ],
   };
 
-  // Filter venues based on search term and selected filters
   const filteredVenues = VenueData.filter((venue) => {
     const matchesSearchTerm =
       venue.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
       venue.description.toLowerCase().includes(searchTerm.toLowerCase());
 
     const matchesType = selectedType ? venue.type === selectedType : true;
-    const matchesBudget = selectedBudget
-      ? venue.budget === selectedBudget
-      : true;
-    const matchesRegion = selectedRegion
-      ? venue.location === selectedRegion
-      : true;
-    const matchesOccasion = selectedOccasion
-      ? venue.occasion === selectedOccasion
-      : true;
+    const matchesBudget = selectedBudget ? venue.budget === selectedBudget : true;
+    const matchesRegion = selectedRegion ? venue.location === selectedRegion : true;
+    const matchesOccasion = selectedOccasion ? venue.occasion === selectedOccasion : true;
 
-    return (
-      matchesSearchTerm &&
-      matchesType &&
-      matchesBudget &&
-      matchesRegion &&
-      matchesOccasion
-    );
+    return matchesSearchTerm && matchesType && matchesBudget && matchesRegion && matchesOccasion;
   });
 
   return (
@@ -81,8 +78,6 @@ const VenueSearch = () => {
         </div>
         <div className="filter-card">
           <h3 className="filter-card__title">Filter Your Search</h3>
-
-          {/* By Type */}
           <div className="filter-card__option">
             <h4 className="filter-card__option-title">By Type</h4>
             {filterOptions.type.map((type) => (
@@ -98,8 +93,6 @@ const VenueSearch = () => {
               </label>
             ))}
           </div>
-
-          {/* By Budget Range */}
           <div className="filter-card__option filter-card__option--budget">
             <h4 className="filter-card__option-title">By Budget Range</h4>
             <div className="filter-card__budget-card">
@@ -119,8 +112,6 @@ const VenueSearch = () => {
               </div>
             </div>
           </div>
-
-          {/* By Region */}
           <div className="filter-card__option">
             <h4 className="filter-card__option-title">By Region</h4>
             {filterOptions.region.map((region) => (
@@ -136,8 +127,6 @@ const VenueSearch = () => {
               </label>
             ))}
           </div>
-
-          {/* By Occasion */}
           <div className="filter-card__option">
             <h4 className="filter-card__option-title">By Occasion</h4>
             {filterOptions.occasion.map((occasion) => (
@@ -155,7 +144,6 @@ const VenueSearch = () => {
           </div>
         </div>
       </aside>
-
       <main className="venue-search__results">
         {filteredVenues.map((venue) => (
           <div className="venue-card2" key={venue.id}>
@@ -206,16 +194,11 @@ const VenueSearch = () => {
                   </p>
                 ))}
               </div>
-
               <form className="venue-card__form">
-                {/* <label>
-                  Check Availability:
-                  <input type="date" required />
-                </label> */}
                 <button
                   className="venue-card__book-btn"
                   onClick={(e) => {
-                    e.preventDefault(); // Prevent the default form submission
+                    e.preventDefault();
                     handleBookNow(venue);
                   }}
                 >
@@ -226,8 +209,6 @@ const VenueSearch = () => {
           </div>
         ))}
       </main>
-
-      {/* Render BookingComponent as a Popup */}
       {showBooking && selectedVenue && (
         <BookingComponent venue={selectedVenue} onClose={handleCloseBooking} />
       )}

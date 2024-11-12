@@ -7,16 +7,17 @@ const BusinessForm = () => {
   const [formData, setFormData] = useState({
     serviceType: "",
     businessName: "",
-    city: "",
-    location: "",
-    phoneNumber: "",
-    email: "",
+    serviceArea: "",
+    price: "",
     venueName: "",
     venueCapacity: "",
-    venuePrice: "",
+    venuePricePerPlate: "",
     venueDescription: "",
     venueCity: "",
     venueAddress: "",
+    venueBestForEventTypes: "",
+    venueFoodType: "",
+    venueAmenities: "",
     venueWebsite: "",
     venueTwitter: "",
     venueInstagram: "",
@@ -29,16 +30,17 @@ const BusinessForm = () => {
     setFormData({
       serviceType: "",
       businessName: "",
-      city: "",
-      location: "",
-      phoneNumber: "",
-      email: "",
+      serviceArea: "",
+      price: "",
       venueName: "",
       venueCapacity: "",
-      venuePrice: "",
+      venuePricePerPlate: "",
       venueDescription: "",
       venueCity: "",
       venueAddress: "",
+      venueBestForEventTypes: "",
+      venueFoodType: "",
+      venueAmenities: "",
       venueWebsite: "",
       venueTwitter: "",
       venueInstagram: "",
@@ -54,41 +56,59 @@ const BusinessForm = () => {
 
   const handleImageChange = (e) => {
     const { name, files } = e.target;
-    setFormData({ ...formData, [name]: [...files] });
+    setFormData({ ...formData, [name]: files });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
-    const token = localStorage.getItem("token");  // Get the token from localStorage
-  
+
+    const token = localStorage.getItem("token");
+
     if (!token) {
       alert("You are not authenticated. Please log in.");
       return;
     }
-  
+
     const url =
       selectedService === "venue"
         ? "http://localhost:5000/api/venues"
         : "http://localhost:5000/api/services";
-  
+
     try {
       const data = new FormData();
-      Object.entries(formData).forEach(([key, value]) => {
-        if (Array.isArray(value)) {
-          value.forEach((file) => data.append(key, file));
-        } else {
-          data.append(key, value);
+
+      // Handle the venue or vendor form data depending on the selection
+      if (selectedService === "venue") {
+        Object.entries(formData).forEach(([key, value]) => {
+          if (key !== "venueImages" && key !== "vendorImages") {
+            data.append(key, value);
+          }
+        });
+
+        // Append venue images
+        for (let i = 0; i < formData.venueImages.length; i++) {
+          data.append("venueImages", formData.venueImages[i]);
         }
-      });
-  
+      } else if (selectedService === "vendor") {
+        Object.entries(formData).forEach(([key, value]) => {
+          if (key !== "venueImages" && key !== "vendorImages") {
+            data.append(key, value);
+          }
+        });
+
+        // Append vendor images
+        for (let i = 0; i < formData.vendorImages.length; i++) {
+          data.append("vendorImages", formData.vendorImages[i]);
+        }
+      }
+
       const response = await axios.post(url, data, {
         headers: {
           "Content-Type": "multipart/form-data",
-          Authorization: `Bearer ${token}`,  // Add Authorization header with JWT token
+          Authorization: `Bearer ${token}`,
         },
       });
-  
+
       if (response.status === 201) {
         alert("Form submitted successfully!");
       }
@@ -97,8 +117,6 @@ const BusinessForm = () => {
       alert("Failed to submit the form. Please try again.");
     }
   };
-  
-
 
   const services = [
     "Catering", "Photography", "Videography", "Music Band", "Decoration", "Event Planning",
@@ -151,7 +169,7 @@ const BusinessForm = () => {
                 />
               </div>
               <div className="business-form__input-group">
-                <label>Venue Capacity *</label>
+                <label>Capacity *</label>
                 <input
                   type="number"
                   name="venueCapacity"
@@ -161,11 +179,11 @@ const BusinessForm = () => {
                 />
               </div>
               <div className="business-form__input-group">
-                <label>Venue Price *</label>
+                <label>Price per Plate *</label>
                 <input
                   type="number"
-                  name="venuePrice"
-                  value={formData.venuePrice}
+                  name="venuePricePerPlate"
+                  value={formData.venuePricePerPlate}
                   onChange={handleInputChange}
                   required
                 />
@@ -180,7 +198,7 @@ const BusinessForm = () => {
                 />
               </div>
               <div className="business-form__input-group">
-                <label>Venue City *</label>
+                <label>City *</label>
                 <input
                   type="text"
                   name="venueCity"
@@ -190,7 +208,7 @@ const BusinessForm = () => {
                 />
               </div>
               <div className="business-form__input-group">
-                <label>Venue Address *</label>
+                <label>Address *</label>
                 <input
                   type="text"
                   name="venueAddress"
@@ -200,9 +218,39 @@ const BusinessForm = () => {
                 />
               </div>
               <div className="business-form__input-group">
-                <label>Venue Website</label>
+                <label>Best for Event Types *</label>
                 <input
-                  type="url"
+                  type="text"
+                  name="venueBestForEventTypes"
+                  value={formData.venueBestForEventTypes}
+                  onChange={handleInputChange}
+                  required
+                />
+              </div>
+              <div className="business-form__input-group">
+                <label>Food Type *</label>
+                <input
+                  type="text"
+                  name="venueFoodType"
+                  value={formData.venueFoodType}
+                  onChange={handleInputChange}
+                  required
+                />
+              </div>
+              <div className="business-form__input-group">
+                <label>Amenities *</label>
+                <input
+                  type="text"
+                  name="venueAmenities"
+                  value={formData.venueAmenities}
+                  onChange={handleInputChange}
+                  required
+                />
+              </div>
+              <div className="business-form__input-group">
+                <label>Website</label>
+                <input
+                  type="text"
                   name="venueWebsite"
                   value={formData.venueWebsite}
                   onChange={handleInputChange}
@@ -211,7 +259,7 @@ const BusinessForm = () => {
               <div className="business-form__input-group">
                 <label>Twitter</label>
                 <input
-                  type="url"
+                  type="text"
                   name="venueTwitter"
                   value={formData.venueTwitter}
                   onChange={handleInputChange}
@@ -220,7 +268,7 @@ const BusinessForm = () => {
               <div className="business-form__input-group">
                 <label>Instagram</label>
                 <input
-                  type="url"
+                  type="text"
                   name="venueInstagram"
                   value={formData.venueInstagram}
                   onChange={handleInputChange}
@@ -257,34 +305,18 @@ const BusinessForm = () => {
                 <label>Service Area *</label>
                 <input
                   type="text"
-                  name="city"
-                  value={formData.city}
+                  name="serviceArea"
+                  value={formData.serviceArea}
                   onChange={handleInputChange}
                   required
                 />
               </div>
               <div className="business-form__input-group">
-                <label>Service Type *</label>
-                <select
-                  name="serviceType"
-                  value={formData.serviceType}
-                  onChange={handleInputChange}
-                  required
-                >
-                  <option value="" disabled>Select Service Type</option>
-                  {services.map((service, index) => (
-                    <option key={index} value={service}>
-                      {service}
-                    </option>
-                  ))}
-                </select>
-              </div>
-              <div className="business-form__input-group">
                 <label>Price *</label>
                 <input
                   type="number"
-                  name="phoneNumber"
-                  value={formData.phoneNumber}
+                  name="price"
+                  value={formData.price}
                   onChange={handleInputChange}
                   required
                 />
@@ -302,11 +334,9 @@ const BusinessForm = () => {
           </>
         )}
 
-        {selectedService && (
-          <button type="submit" className="business-form__submit-button">
-            List your business
-          </button>
-        )}
+        <button type="submit" className="business-form__submit-btn">
+          Submit
+        </button>
       </form>
     </div>
   );
