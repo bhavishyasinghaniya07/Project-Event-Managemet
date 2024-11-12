@@ -60,7 +60,7 @@ const CompanyTeamSection = () => {
           </div>
           <div className="company-image">
             <img
-              src="https://www.venuelook.com/images/company-11.png"
+              src="https://t4.ftcdn.net/jpg/06/45/52/43/240_F_645524365_gxzLAFpl8tV7cNRCAvxHWvmmxVWqPv3I.jpg"
               alt="Founder"
               className="founder-image"
             />
@@ -73,7 +73,7 @@ const CompanyTeamSection = () => {
         <div className="team-content">
           <div className="team-image">
             <img
-              src="https://www.venuelook.com/images/company-21.png"
+              src="https://t3.ftcdn.net/jpg/10/63/63/82/240_F_1063638288_e1mISsgrACbDaVfPa3stGARFOV9aBIbl.jpg"
               alt="Team"
               className="team-photo"
             />
@@ -114,7 +114,7 @@ const CompanyTeamSection = () => {
           </div>
           <div className="join-image">
             <img
-              src="https://www.venuelook.com/images/company-31.png"
+              src="https://as1.ftcdn.net/v2/jpg/10/46/64/74/1000_F_1046647463_fLPl1qTnfBAQTLkpVI4Ie5Nwk33Ck969.jpg"
               alt="Join Us"
               className="team-photo"
             />

@@ -10,7 +10,7 @@ const VendorData = [
     contactNumber: "+91-1234567890",
     availability: "Available",
     images: [
-      "https://example.com/images/shutterbugs1.jpg",
+      "https://imgs.search.brave.com/vrOtZXsl8LQZqTmJIOMdcqMEl_X9Mffr0XBM19m-PAk/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly93d3cu/cHRhdWZpcXBob3Rv/Z3JhcGh5LmNvbS93/cC1jb250ZW50L3Vw/bG9hZHMvMjAyNC8w/Ni9wdGF1ZmlxLWlu/ZGlhbi13ZWRkaW5n/LWNvc3RhLW11amVy/ZXMtbWV4aWNvLWRl/c3RpbmF0aW9uLWNl/cmVtb255LmpwZw",
       "https://example.com/images/shutterbugs2.jpg",
       "https://example.com/images/shutterbugs3.jpg",
     ],
@@ -32,7 +32,7 @@ const VendorData = [
     contactNumber: "+91-9876543210",
     availability: "Available",
     images: [
-      "https://example.com/images/tasteofindia1.jpg",
+      "https://imgs.search.brave.com/aSX7a-8ZXJpgfItN7eT-BVtfuLu04QqK6aqYjBG9SAg/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9jZG4w/LndlZGRpbmd3aXJl/LmluL3ZlbmRvci8w/MTQ1LzNfMi82NDAv/anBnL2NhdGVyaW5n/LWJyb3duLXN1Z2Fy/LWNhdGVyaW5nLXNl/dHVwLTFfMTVfMzYw/MTQ1LTE2MDg2NjM2/Mzg4Mzc3Mi5qcGVn",
       "https://example.com/images/tasteofindia2.jpg",
       "https://example.com/images/tasteofindia3.jpg",
     ],
@@ -53,7 +53,7 @@ const VendorData = [
     contactNumber: "+91-2345678901",
     availability: "Available",
     images: [
-      "https://example.com/images/dreamdecorators1.jpg",
+      "https://imgs.search.brave.com/-kdp09yUfao-6KyxOq-_JYDWYqU1kVOvMByo70SE994/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS1hcGkueG9ncnAu/Y29tL2ltYWdlcy81/MDVmZmZiZS1hNmM1/LTQzMTUtYmU2MS04/ODMyM2Q3NzkzYzE.jpeg",
       "https://example.com/images/dreamdecorators2.jpg",
       "https://example.com/images/dreamdecorators3.jpg",
     ],
@@ -74,7 +74,7 @@ const VendorData = [
     contactNumber: "+91-3456789012",
     availability: "Available",
     images: [
-      "https://example.com/images/euphonic1.jpg",
+      "https://imgs.search.brave.com/hMpfNi_RC1Y4NgF_lb1bNCvPOZM2nzo08lK1yJu0K6E/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS1hcGkueG9ncnAu/Y29tL2ltYWdlcy8y/OWNlNjBlMS1lZTA1/LTRhMWYtODk0Yy1m/NjIyODQzNzgyNTZ-/cnNfNzY4Lmg",
       "https://example.com/images/euphonic2.jpg",
       "https://example.com/images/euphonic3.jpg",
     ],
@@ -95,7 +95,7 @@ const VendorData = [
     contactNumber: "+91-4567890123",
     availability: "Unavailable",
     images: [
-      "https://example.com/images/elegantmoments1.jpg",
+      "https://imgs.search.brave.com/t_otxabQOoJlbWMwD8ZKh_Y57U_Vyy4-ESz3gr5Z0d0/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly93d3cu/cHRhdWZpcXBob3Rv/Z3JhcGh5LmNvbS93/cC1jb250ZW50L3Vw/bG9hZHMvMjAxOS8w/MS9JbmRpYW4tV2Vk/ZGluZy1QaG90b2dy/YXBoeS1CYXJhYXQt/Qm9zdG9uLVB0YXVm/aXEtQ2FuY3VuLU1l/eGljbzMuanBn",
       "https://example.com/images/elegantmoments2.jpg",
       "https://example.com/images/elegantmoments3.jpg",
     ],
@@ -116,7 +116,7 @@ const VendorData = [
     contactNumber: "+91-7890123456",
     availability: "Available",
     images: [
-      "https://example.com/images/royaltreat1.jpg",
+      "https://imgs.search.brave.com/-m-t4VlU2tyHlGCExQZUXjDB49rErES0yYuce2F8fQY/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9jZG4w/LndlZGRpbmd3aXJl/LmluL3ZlbmRvci80/NjUyLzNfMi82NDAv/anBnLzQ2OTQ3NWRl/LWUyZmQtNDc0Ni05/YmEzLTQ1YTUwMWFh/YmUxZV8xNV80MjQ2/NTItMTY5Mzk4MjY2/NjQ3NDQ1LmpwZWc",
       "https://example.com/images/royaltreat2.jpg",
       "https://example.com/images/royaltreat3.jpg",
     ],
@@ -137,7 +137,7 @@ const VendorData = [
     contactNumber: "+91-8901234567",
     availability: "Available",
     images: [
-      "https://example.com/images/starrynights1.jpg",
+      "https://imgs.search.brave.com/jAqXzUl-MphOexYC72qMPUT5y0AQT_-97FlaRxDGCns/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly90aWlt/Zy50aXN0YXRpYy5j/b20vZnAvMS8wMDgv/NTU5L2V2ZW50LWRl/Y29yYXRpb24tc2Vy/dmljZS03OTQuanBn",
       "https://example.com/images/starrynights2.jpg",
       "https://example.com/images/starrynights3.jpg",
     ],
@@ -161,7 +161,7 @@ const VendorData = [
     contactNumber: "+91-9012345678",
     availability: "Unavailable",
     images: [
-      "https://example.com/images/funfiesta1.jpg",
+      "https://imgs.search.brave.com/SxNasqNV3ylnU2nt2uLDl21HbkyisQmmGCVgL0UOtFs/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9hc3Nl/dHMuZWFzeXdlZGRp/bmdzLmNvbS9maWxl/cy8yMDIxLzEwLzMw/MDg1NjU5L05hdGFs/aWVfQ2hyaXNfQ2xh/c3NpYy1FbmdsaXNo/LVdlZGRpbmdfR2Vt/bWEtR2lvcmdpby1Q/aG90b2dyYXBoeV8w/NDgtOTAweDYwMC0y/LTg5MHg1OTMuanBn",
       "https://example.com/images/funfiesta2.jpg",
       "https://example.com/images/funfiesta3.jpg",
     ],
@@ -182,7 +182,7 @@ const VendorData = [
     contactNumber: "+91-2345678901",
     availability: "Available",
     images: [
-      "https://example.com/images/epicwedding1.jpg",
+      "https://imgs.search.brave.com/QYJxH7qdgsOnhjqGQUo_p6pIpF8X1EjLFG56-RMog2Q/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly93ZWIt/aW1hZ2VzLnBpeHBh/LmNvbS85a3hsV2lz/LWxRQlVFRWZxanRm/cjFqMmY0RFJpWXBV/ZFdMbXV2SVhsbEo4/L3JzOmZpdDoxMjAw/OjAvcTo5MC9hSFIw/Y0hNNkx5OXpNeTFw/YldjdWNHbDRjR0V1/WTI5dEwyTnZiUzlz/WVhKblpTODFNREk0/TDNCME1UQTVOakkw/TFRScmVHdHdNUzVx/Y0djPQ.jpeg",
       "https://example.com/images/epicwedding2.jpg",
       "https://example.com/images/epicwedding3.jpg",
     ],
@@ -203,7 +203,7 @@ const VendorData = [
     contactNumber: "+91-3214567890",
     availability: "Available",
     images: [
-      "https://example.com/images/flavorsofhome1.jpg",
+      "https://imgs.search.brave.com/PjksgJDc220lgIsBeHG4jPbQVAZYM7fK4d7XjGSWEt4/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9jZG4w/LndlZGRpbmd3aXJl/LmluL3ZlbmRvci80/NjUyLzNfMi82NDAv/anBnL2VhMjVkYzBh/LTMyN2ItNGIwOS05/MzlkLTg0YzBlYmY4/YWU2OV8xNV80MjQ2/NTItMTY5Mzk4MjY5/MjE5NDc0LmpwZWc",
       "https://example.com/images/flavorsofhome2.jpg",
       "https://example.com/images/flavorsofhome3.jpg",
     ],
@@ -224,7 +224,7 @@ const VendorData = [
     contactNumber: "+91-6789012345",
     availability: "Available",
     images: [
-      "https://example.com/images/glamourdecor1.jpg",
+      "https://imgs.search.brave.com/KglKYyDFJdaLT0vIoubdsoTU9DIy5iKVz70AZXNlBfs/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9jcGlt/Zy50aXN0YXRpYy5j/b20vMDc1MzI2NjAv/Yi81L0Zsb3dlci1E/ZWNvcmF0aW9uLVNl/cnZpY2UuanBn",
       "https://example.com/images/glamourdecor2.jpg",
       "https://example.com/images/glamourdecor3.jpg",
     ],
@@ -245,7 +245,7 @@ const VendorData = [
     contactNumber: "+91-7654321098",
     availability: "Unavailable",
     images: [
-      "https://example.com/images/partystar1.jpg",
+      "https://imgs.search.brave.com/jQ9fdLxMm1ejdWhxFE8vKLUCJLQXy2EzfjstJumTP-8/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9kcmVh/bXdlZGRpbmdodWIu/Y29tL3B1YmxpYy91/cGxvYWRzL3ZlbmRv/cl9pbWFnZXMvMTcy/MzAxMTk5Ni1EaiUy/ME1laHVsJTIwc291/bmQlMjAmJTIwbGln/aHRpbmcuanBn",
       "https://example.com/images/partystar2.jpg",
       "https://example.com/images/partystar3.jpg",
     ],
@@ -266,7 +266,7 @@ const VendorData = [
     contactNumber: "+91-6543210987",
     availability: "Available",
     images: [
-      "https://example.com/images/memorableevents1.jpg",
+      "https://imgs.search.brave.com/y3IVPWt-1vrnP5iTi_IcJJctAE1LoZaDbSvo6zWatbE/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzE4L2Q4/L2E4LzE4ZDhhODU1/MmU5NWJkYWFiZmI5/YmFmMmMzZDIyOTcy/LmpwZw",
       "https://example.com/images/memorableevents2.jpg",
       "https://example.com/images/memorableevents3.jpg",
     ],
@@ -287,7 +287,7 @@ const VendorData = [
     contactNumber: "+91-5432167890",
     availability: "Available",
     images: [
-      "https://example.com/images/culinarydelights1.jpg",
+      "https://imgs.search.brave.com/w_KEDFu227KiJSkNu5F-9nL3kwx2JZcp_rnRf_LnOQk/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9jZG4w/LndlZGRpbmd3aXJl/LmluL3ZlbmRvci84/ODE1LzNfMi82NDAv/anBnLzBmMTQ4YTc3/LTYwMGUtNDcwYS04/YTIxLTkzM2EzYTVk/MjMxOF8xNV8xODg4/MTUtMTU1NDM1ODEz/OC5qcGVn",
       "https://example.com/images/culinarydelights2.jpg",
       "https://example.com/images/culinarydelights3.jpg",
     ],
@@ -308,7 +308,7 @@ const VendorData = [
     contactNumber: "+91-7890654321",
     availability: "Available",
     images: [
-      "https://example.com/images/lavishdecor1.jpg",
+      "https://imgs.search.brave.com/sA6hbfK49TsTpyGo84NbQ_V46LEeM79xx8rOwW4-Bs8/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9jZG4w/LndlZGRpbmd3aXJl/LmluL3ZlbmRvci82/NDk2LzNfMi82NDAv/anBnL3dlZGRpbmct/ZGVjb3JhdGlvbi1z/YXZ5YS13ZWRkaW5n/cy1lbnRyYW5jZS1k/ZWNvci0zXzE1Xzc2/NDk2LTE2MDc1MjEw/NzAyMjU2MS5qcGVn",
       "https://example.com/images/lavishdecor2.jpg",
       "https://example.com/images/lavishdecor3.jpg",
     ],
@@ -329,7 +329,7 @@ const VendorData = [
     contactNumber: "+91-8765432109",
     availability: "Available",
     images: [
-      "https://example.com/images/sparklingevents1.jpg",
+      "https://imgs.search.brave.com/bOmN6ftTIxShUqYVSXvoTwuzS3RKYk_DxaG3kmz_MhA/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly93d3cu/aGFwcHl3ZWRkaW5n/LmFwcC9ibG9nL3dw/LWNvbnRlbnQvdXBs/b2Fkcy8yMDIxLzAz/L0JBUkFBVC1TT05H/Uy5qcGc",
       "https://example.com/images/sparklingevents2.jpg",
       "https://example.com/images/sparklingevents3.jpg",
     ],

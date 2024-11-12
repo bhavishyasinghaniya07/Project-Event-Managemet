@@ -55,6 +55,11 @@
 
 .cat{
   text-align: center;
+  color: black;
+}
+
+h3{
+  color: black;
 }
 
 .cat:hover{

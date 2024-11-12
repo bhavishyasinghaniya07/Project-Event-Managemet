@@ -49,8 +49,7 @@ const VenueData = [
     availability: "Available",
     alcoholServed: "No",
     images: [
-      "https://cdn.venuelook.com/uploads/space_39596/1724497691_595x400.png",
-      "https://cdn.venuelook.com/uploads/space_39596/1724497706_595x400.png",
+      "https://imgs.search.brave.com/gjUuvIBRiKIGUkqBiJpPy3QOehmpDdjus_WvDOumnb0/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly93d3cu/amF5cGVlaG90ZWxz/LmNvbS9pbWFnZXMv/d2VkZGluZy1wYWdl/L291ciUyMHZlbnVz/JTIwLTUuanBn",
     ],
     contactNumber: "+91-9123456789",
     amenities: ["Parking", "Catering", "Decor", "Sound System"],
@@ -79,7 +78,7 @@ const VenueData = [
     availability: "Available",
     alcoholServed: "Yes",
     images: [
-      "https://cdn.venuelook.com/uploads/space_39596/1724497691_595x400.png",
+      "https://imgs.search.brave.com/ItY38j4OwSq4xBa7G-F2MDWmDuEr23-kPaBF8iyZBP8/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXdlZHoub3lvcm9v/bXNjZG4uY29tL21l/ZGl1bS9waG90b2xv/Z3VlL2ltYWdlcy9y/YWFqa3V0aXItc3dh/Ymh1bWktc2FsdGxh/a2UtY2l0eS1rb2xr/YXRhLmpwZw",
     ],
     contactNumber: "+91-9876543210",
     amenities: ["WiFi", "Projector", "Catering", "Parking"],
@@ -107,7 +106,7 @@ const VenueData = [
     availability: "Available",
     alcoholServed: "Yes",
     images: [
-      "https://cdn.venuelook.com/uploads/space_39596/1724497691_595x400.png",
+      "https://imgs.search.brave.com/ohuEQ7HbGOF9hmoAKruJc_i-WlAdTuvFOmyo5BoBi2A/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9hcG9s/bG8ub2x4LmluL3Yx/L2ZpbGVzL2tnMmRj/NDcweTlwcDItSU4v/aW1hZ2U7cz0yNzJ4/MA.jpeg",
     ],
     contactNumber: "+91-7654321098",
     amenities: ["Catering", "Decor", "WiFi", "Air Conditioning"],
@@ -136,7 +135,7 @@ const VenueData = [
     availability: "Available",
     alcoholServed: "No",
     images: [
-      "https://cdn.venuelook.com/uploads/space_39596/1724497691_595x400.png",
+      "https://imgs.search.brave.com/LBn963GZF2MRSIqM1W0SHpgQ0Jg29VGdfo5lC6jJbZU/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9jb250/ZW50LmpkbWFnaWNi/b3guY29tL2NvbXAv/bXVtYmFpL3Q5LzAy/MnB4eDIyLnh4MjIu/MjExMjAzMTQxMTEy/LnAzdDkvY2F0YWxv/Z3VlL2JhbGFqaS1i/YW5xdWV0LWhhbGwt/cGFudmVsLW11bWJh/aS1iYW5xdWV0LWhh/bGxzLXoyazl3ZWlz/ZTIuanBn",
     ],
     contactNumber: "+91-9432156789",
     amenities: ["Parking", "Sound System", "Lighting", "Catering"],
@@ -167,7 +166,7 @@ const VenueData = [
     availability: "Available",
     alcoholServed: "Yes",
     images: [
-      "https://cdn.venuelook.com/uploads/space_39596/1724497691_595x400.png",
+      "https://imgs.search.brave.com/dxPMB9fpeoQpATDZNfALAYt1dZqgFcD_n_zBhKhOP04/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9hcG9s/bG8ub2x4LmluL3Yx/L2ZpbGVzL2ZoMjEx/cXVhdHlwazEtSU4v/aW1hZ2U7cz0yNzJ4/MA.jpeg",
     ],
     contactNumber: "+91-9191919191",
     amenities: ["WiFi", "Catering", "Decor", "Projector"],
@@ -195,7 +194,7 @@ const VenueData = [
     availability: "Available",
     alcoholServed: "No",
     images: [
-      "https://cdn.venuelook.com/uploads/space_39596/1724497691_595x400.png",
+      "https://imgs.search.brave.com/LvCeej9oQZkaQulqwnPX3GyDXsSW9j519QUR90d0K_k/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzL2I2LzFi/Lzg0L2I2MWI4NDM3/MWZmNWRlY2I0YjE5/N2M3YWI5OGEwYzE2/LmpwZw",
     ],
     contactNumber: "+91-8765432109",
     amenities: ["WiFi", "Parking", "AC"],
@@ -223,7 +222,7 @@ const VenueData = [
     availability: "Available",
     alcoholServed: "Yes",
     images: [
-      "https://cdn.venuelook.com/uploads/space_39596/1724497691_595x400.png",
+      "https://imgs.search.brave.com/mZ65uZ3KYq10imcXOKzWKqyPmJ6qtS-4CUsSEQsegwc/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9jZG4w/LndlZGRpbmd3aXJl/LmluL3ZlbmRvci85/NDUyLzNfMi82NDAv/anBnL2JhbnF1ZXQt/aW1nMS5qcGVn",
     ],
     contactNumber: "+91-7894561230",
     amenities: ["Catering", "Parking", "Decor"],
@@ -255,7 +254,7 @@ const VenueData = [
     availability: "Available",
     alcoholServed: "Yes",
     images: [
-      "https://cdn.venuelook.com/uploads/space_39596/1724497691_595x400.png",
+      "https://imgs.search.brave.com/y5tdlFB9-HeD_fhgBMRTc_YFbtRzMpBEOEahx0fcA64/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzQwLzIw/LzliLzQwMjA5YjAx/YzQ5ZGNjMTY1NmIy/NzA4NjFhMmIwNTA2/LmpwZw",
     ],
     contactNumber: "+91-9999999999",
     amenities: ["WiFi", "Lighting", "Catering"],
